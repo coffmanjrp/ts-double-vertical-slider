@@ -6,7 +6,7 @@ var upButton = document.querySelector('.up-button');
 var downButton = document.querySelector('.down-button');
 var slidesLength = slideRight.querySelectorAll('div').length;
 var activeSlideIndex = 0;
-slideLeft.style.top = "-" + (slidesLength - 1) * 100 + "vh";
+slideLeft.style.top = "-".concat((slidesLength - 1) * 100, "vh");
 var changeSlide = function (direction) {
     var sliderHeight = sliderContainer.clientHeight;
     if (direction === 'up') {
@@ -21,8 +21,8 @@ var changeSlide = function (direction) {
             activeSlideIndex = slidesLength - 1;
         }
     }
-    slideRight.style.transform = "translateY(-" + activeSlideIndex * sliderHeight + "px)";
-    slideLeft.style.transform = "translateY(" + activeSlideIndex * sliderHeight + "px)";
+    slideRight.style.transform = "translateY(-".concat(activeSlideIndex * sliderHeight, "px)");
+    slideLeft.style.transform = "translateY(".concat(activeSlideIndex * sliderHeight, "px)");
 };
 upButton.addEventListener('click', function () { return changeSlide('up'); });
 downButton.addEventListener('click', function () { return changeSlide('down'); });
